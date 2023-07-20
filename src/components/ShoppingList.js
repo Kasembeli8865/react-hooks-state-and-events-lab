@@ -2,13 +2,13 @@ import React,{useState} from "react";
 import Item from "./Item";
 
 function ShoppingList({ items }) {
-  const [selectedCategory, setValue] = useState(false)
+  const [selectedCategory, setValue] = useState(All)
   
   function handleChange(event){
     selectedCategory(event.target.value)
   }
 
-  const filteredItems = selectedCategory === "false" ? items : items.filter(item => item.category === selectedCategory);
+  const filteredItems = selectedCategory === "All" ? items : items.filter(item => item.category === selectedCategory);
 
   return (
     <div className="ShoppingList">
